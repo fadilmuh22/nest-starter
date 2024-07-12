@@ -1,0 +1,9 @@
+[
+  {
+    "name": "server-0",
+    "host": "128.199.139.191",
+    "username": "root",
+    "port": "22",
+    "path": "/var/www/html/boardbyte-api"
+  }
+]
