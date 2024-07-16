@@ -4,17 +4,6 @@ EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;
 --> statement-breakpoint
-CREATE TABLE IF NOT EXISTS "sound" (
-	"sound_id" serial PRIMARY KEY NOT NULL,
-	"title" text,
-	"image_url" text,
-	"selling" text,
-	"sound_url" text,
-	"author_id" text,
-	"created_at" timestamp DEFAULT now() NOT NULL,
-	"updated_at" timestamp DEFAULT now() NOT NULL
-);
---> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "user" (
 	"user_id" serial PRIMARY KEY NOT NULL,
 	"email" text,
@@ -28,4 +17,15 @@ CREATE TABLE IF NOT EXISTS "user" (
 	"created_at" timestamp DEFAULT now() NOT NULL,
 	"updated_at" timestamp DEFAULT now() NOT NULL,
 	CONSTRAINT "user_email_unique" UNIQUE("email")
+);
+--> statement-breakpoint
+CREATE TABLE IF NOT EXISTS "sound" (
+	"sound_id" serial PRIMARY KEY NOT NULL,
+	"title" text,
+	"image_url" text,
+	"selling" text,
+	"sound_url" text,
+	"author_id" text,
+	"created_at" timestamp DEFAULT now() NOT NULL,
+	"updated_at" timestamp DEFAULT now() NOT NULL
 );

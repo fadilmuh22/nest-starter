@@ -5,8 +5,9 @@ services:
     environment:
       - POSTGRES_PASSWORD=postgres
     container_name: postgres
+    user: root
     volumes:
-      - ./pgdata:/var/lib/postgresql/data:Z
+      - ./pgdata:/var/lib/postgresql/data
     ports:
       - '5432:5432'
 
@@ -29,8 +30,10 @@ services:
       - '3000:3000'
     depends_on:
       - db
+    user: root
     volumes:
-    - /app/node_modules
+      - /app/node_modules
+      - /app/src/drizzle/migrations
 
   pgadmin:
     image: dpage/pgadmin4

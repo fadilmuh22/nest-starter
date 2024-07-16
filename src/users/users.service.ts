@@ -3,7 +3,7 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { PG_CONNECTION } from 'src/constants';
 import { NodePgDatabase } from 'drizzle-orm/node-postgres';
-import * as schema from '../drizzle/schema';
+import * as schema from 'src/drizzle/schema';
 
 @Injectable()
 export class UsersService {
