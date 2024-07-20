@@ -7,7 +7,7 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('Boardbyte API')
-    .setDescription('The cats API description')
+    .setDescription('The Boardbyte API description')
     .setVersion('1.0')
     .addTag('boardbyte')
     .build();

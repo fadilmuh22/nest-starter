@@ -1,5 +1,6 @@
+name: nest-starter
 services:
-  db:
+  postgres:
     image: postgres
     restart: always
     environment:
@@ -23,7 +24,7 @@ services:
           target: /app/src
         - action: rebuild
           path: package.json
-    container_name: nest-docker-postgres
+    container_name: app
     environment:
       - PORT=${PORT}
     ports:
@@ -38,7 +39,7 @@ services:
   pgadmin:
     image: dpage/pgadmin4
     restart: always
-    container_name: nest-pgadmin4
+    container_name: pgadmin4
     environment:
       - PGADMIN_DEFAULT_EMAIL=admin@admin.com
       - PGADMIN_DEFAULT_PASSWORD=pgadmin4
